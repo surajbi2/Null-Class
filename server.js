@@ -2,14 +2,11 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
-const session = require('express-session');
-const passport = require('passport');
 const request = require('request');
 require('dotenv').config();
-require('./config/passport-setup'); 
 
 const commentsRouter = require('./routes/comments');
-// const authRouter = require('./routes/auth');
+// Removed the authRouter as authentication is no longer needed.
 
 const app = express();
 
@@ -18,24 +15,22 @@ app.set('views', './views');
 
 app.use(cors());
 app.use(express.json());
-// app.use(session({
-//     secret: process.env.SESSION_SECRET,
-//     resave: false,
-//     saveUninitialized: false,
-//     cookie: { secure: true }
-// }));
 
-app.use(passport.initialize());
-app.use(passport.session());
+// Removed session and passport initialization as authentication is no longer needed.
+
+// Removed passport initialization.
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
- app.get('/lordicon.js', (req, res) => {
+app.get('/lordicon.js', (req, res) => {
     res.setHeader('X-Content-Type-Options', 'nosniff');
     request('https://cdn.lordicon.com/lordicon.js').pipe(res);
 });
 
 app.use('/comments', commentsRouter);
+// Removed the authentication routes.
 // app.use('/auth', authRouter);
 
 app.get('/Video', (req, res) => {
