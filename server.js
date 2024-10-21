@@ -9,7 +9,7 @@ require('dotenv').config();
 require('./config/passport-setup'); 
 
 const commentsRouter = require('./routes/comments');
-const authRouter = require('./routes/auth');
+// const authRouter = require('./routes/auth');
 
 const app = express();
 
@@ -18,12 +18,12 @@ app.set('views', './views');
 
 app.use(cors());
 app.use(express.json());
-app.use(session({
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false,
-    cookie: { secure: true }
-}));
+// app.use(session({
+//     secret: process.env.SESSION_SECRET,
+//     resave: false,
+//     saveUninitialized: false,
+//     cookie: { secure: true }
+// }));
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -36,7 +36,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 });
 
 app.use('/comments', commentsRouter);
-app.use('/auth', authRouter);
+// app.use('/auth', authRouter);
 
 app.get('/Video', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'video.html'));
