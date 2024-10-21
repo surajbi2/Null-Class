@@ -1,0 +1,8 @@
+[build]
+  command = "npm run build" # Adjust based on your build command
+  publish = "public" # Adjust to your static output directory
+
+[[redirects]]
+  from = "/Video"
+  to = "/video.html"
+  status = 200

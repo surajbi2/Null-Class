@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "vercel-build": "npm install"
+    "build": "node build.js"
   },
   "keywords": [],
   "author": "",
@@ -32,5 +31,8 @@
     "request": "^2.88.2",
     "twilio": "^5.3.4"
   },
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "fs-extra": "^11.2.0"
+  }
 }
