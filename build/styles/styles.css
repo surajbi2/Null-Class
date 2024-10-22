@@ -1,187 +1,77 @@
-.icon-size {
-    width: 50px;
-    height: 50px;
-    top: 10px;
-    bottom: 0px;
-    right: 10px;
-}
-
-body.dark .icon-size {
-    background-color: #ffffff; 
-}
-
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f8f9fa; 
-    color: #343a40;
-}
-
-h1, h2 {
-    color: #343a40;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .video-container {
-    background-color: #ffffff;
-    width: 60%;
-    margin: 0 auto;
-    border-radius: 5px;
+    max-width: 100%;
+    height: auto;
 }
 
-.comment-section,
-.translation-section {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-
-body.dark {
-    background-color: #1e1e1e !important;
-    color: #ffffff !important;
-}
-
-h1.dark, h2.dark {
-    color: #ffffff;
-}
-
-.translation-section h2 {
-    color: #343a40; 
-}
-
-body.dark .translation-section h2 {
-    color: #ffffff; 
-}
-
-body.dark .translation-section label {
-    color: #ffffff;
-}
-
-body.dark .translation-section select {
-    background-color: #2c2c2c; 
-    color: #ffffff;
-}
-
-html.dark {
-    background-color: #1e1e1e; 
-}
-
-.container.dark {
-    background-color: #1e1e1e; 
-    color: #ffffff;  
-}
-
-.video-container.dark {
-    background-color: #2c2c2c;  
-}
-
-.comment-section.dark,
-.translation-section.dark {
-    background-color: #2c2c2c; 
-}
-
-.quality-buttons button {
-    margin: 0 5px;
-    padding: 8px 12px;
-    font-size: 16px;
-}
-
-.comment {
-    background: #f9f9f9;  
-    padding: 15px;
+.comment-section {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 1rem;
     border-radius: 8px;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.comment:hover {
-    background-color: #e0f7fa; 
+.quality-buttons .btn {
+    margin: 0.2rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.comment-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+.translation-section {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
-.comment-user {
-    font-weight: bold;
-    color: #333;  
+.bg-light {
+    background-color: #f8f9fa !important;
+    color: #212529 !important;
 }
 
-.comment-text {
-    margin-top: 5px;
-    color: #555; 
+.bg-light .video-container {
+    background-color: #ffffff;
 }
 
-.comment-actions {
-    margin-top: 10px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+.bg-light .comment-section,
+.bg-light .translation-section {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #212529;
 }
 
-.comment-actions button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    color: #0081A7;  
-    margin-right: 20px;
-    font-size: 16px;
+.bg-light .quality-buttons .btn-primary {
+    background-color: #007bff;
+    color: #fff;
 }
 
-.comment-actions button:hover {
-    color: #00AFB9;  
+.bg-light .quality-buttons .btn-primary:hover {
+    background-color: #0056b3;
 }
 
-.likes-dislikes {
-    display: flex;
-    align-items: center;
+.bg-dark {
+    background-color: #121212 !important;
+    color: #f1f1f1 !important;
 }
 
-.likes-count, .dislikes-count {
-    margin-left: 5px;
-    font-size: 14px;
+.bg-dark .video-container {
+    background-color: #1a1a1a;
 }
 
-.dislike {
-    color: #F07167;  
+.bg-dark .comment-section,
+.bg-dark .translation-section {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #f1f1f1;
 }
 
-.like {
-    color: #0081A7; 
+.bg-dark .quality-buttons .btn-primary {
+    background-color: #f9fafb;
+    color: #0b0b0b;
 }
 
-body.dark .comment {
-    background: #2c2c2c; 
-}
-
-body.dark .comment-user {
-    color: #ffffff; 
-}
-
-body.dark .comment-text {
-    color: #dddddd; 
-}
-
-body.dark .comment-section,
-body.dark .translation-section {
-    background-color: #2c2c2c;  
-}
-
-body.dark .video-container {
-    background-color: #2c2c2c;  
-}
-
-body.dark .quality-buttons button {
-    background-color: #343a40;  
-    color: #ffffff;
-}
-
-body.dark .quality-buttons button:hover {
-    background-color: #495057;
+.bg-dark .quality-buttons .btn-primary:hover {
+    background-color: #007bff;
+    color: #f1f1f1;
 }

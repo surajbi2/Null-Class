@@ -1,6 +1,4 @@
-<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,14 +10,12 @@
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
 </head>
 
-<body class="bg-light">
+<body class="bg-light text-dark">
     <div class="container mt-5">
         <button id="themeToggle" class="btn btn-secondary mb-3">Toggle Theme</button>
 
         <h1 class="text-center mb-4">
-            <lord-icon src="https://cdn.lordicon.com/qfwgmyhc.json" trigger="hover"
-                colors="primary:#121331,secondary:#16c72e" class="icon-size">
-            </lord-icon>
+            <lord-icon src="https://cdn.lordicon.com/qfwgmyhc.json" trigger="hover" colors="primary:#121331,secondary:#16c72e" class="icon-size bg-white"></lord-icon>
             Video Player
         </h1>
 
@@ -64,6 +60,7 @@
 
     <script src="/js/script.js"></script> 
     <script src="/lordicon.js"></script>
+
     <script>
         function setTheme() {
             fetch('https://ipinfo.io/json?token=1918dd4c261f41')
@@ -73,19 +70,37 @@
                     const currentHour = new Date().getHours();
                     const southIndiaStates = ['Tamil Nadu', 'Kerala', 'Karnataka', 'Andhra Pradesh', 'Telangana'];
                     const isSouthIndia = southIndiaStates.includes(region);
-
-                    const theme = (currentHour >= 10 && currentHour < 12 && isSouthIndia) ? 'bg-light text-dark' : 'bg-dark text-light';
-
-                    document.body.className = theme;
+    
+                    const isLightTheme = (currentHour >= 10 && currentHour < 12 && isSouthIndia);
+                    
+                    if (isLightTheme) {
+                        document.body.classList.remove('bg-dark', 'text-light', 'dark');
+                        document.body.classList.add('bg-light', 'text-dark');
+                    } else {
+                        document.body.classList.remove('bg-light', 'text-dark');
+                        document.body.classList.add('bg-dark', 'text-light', 'dark');
+                    }
                 })
                 .catch(error => {
                     console.error('Error fetching location:', error);
-                    document.body.className = 'bg-dark text-light';
+                    document.body.classList.remove('bg-light', 'text-dark');
+                    document.body.classList.add('bg-dark', 'text-light', 'dark');
                 });
         }
-
+    
         window.onload = setTheme;
+    
+        document.getElementById('themeToggle').addEventListener('click', function() {
+            if (document.body.classList.contains('bg-dark')) {
+                document.body.classList.remove('bg-dark', 'text-light', 'dark');
+                document.body.classList.add('bg-light', 'text-dark');
+            } else {
+                document.body.classList.remove('bg-light', 'text-dark');
+                document.body.classList.add('bg-dark', 'text-light', 'dark');
+            }
+        });
     </script>
-</body>
+    
 
+</body>
 </html>
