@@ -1,45 +1,50 @@
+/* Default styles */
 body {
     font-family: 'Poppins', sans-serif;
     transition: background-color 0.3s, color 0.3s;
 }
 
+/* Video container styling */
 .video-container {
     max-width: 100%;
     height: auto;
 }
 
+/* Comment section */
 .comment-section {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.1); /* Light background for readability */
     padding: 1rem;
     border-radius: 8px;
 }
 
+/* Quality buttons */
 .quality-buttons .btn {
     margin: 0.2rem;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-
+/* Translation section */
 .translation-section {
     margin-top: 2rem;
     padding: 1rem;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.1); /* Subtle background to separate section */
     border-radius: 8px;
 }
 
+/* Light theme overrides */
 .bg-light {
-    background-color: #f8f9fa !important;
-    color: #212529 !important;
+    background-color: #f8f9fa !important; /* Bootstrap's light background */
+    color: #212529 !important; /* Bootstrap's dark text */
 }
 
 .bg-light .video-container {
-    background-color: #ffffff;
+    background-color: #ffffff; /* Video container light background */
 }
 
 .bg-light .comment-section,
 .bg-light .translation-section {
-    background-color: rgba(255, 255, 255, 0.7);
-    color: #212529;
+    background-color: rgba(255, 255, 255, 0.7); /* Light theme adjustment for sections */
+    color: #212529; /* Dark text */
 }
 
 .bg-light .quality-buttons .btn-primary {
@@ -51,19 +56,20 @@ body {
     background-color: #0056b3;
 }
 
+/* Dark theme */
 .bg-dark {
-    background-color: #121212 !important;
-    color: #f1f1f1 !important;
+    background-color: #121212 !important; /* Dark background */
+    color: #f1f1f1 !important; /* Light text */
 }
 
 .bg-dark .video-container {
-    background-color: #1a1a1a;
+    background-color: #1a1a1a; /* Dark theme for the video container */
 }
 
 .bg-dark .comment-section,
 .bg-dark .translation-section {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #f1f1f1;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark theme background */
+    color: #f1f1f1; /* Light text */
 }
 
 .bg-dark .quality-buttons .btn-primary {
